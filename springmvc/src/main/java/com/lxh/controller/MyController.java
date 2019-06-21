@@ -29,6 +29,21 @@ public class MyController {
     User user;
     int code;
 
+    @RequestMapping(value = "/student",method = RequestMethod.POST)
+    public String insertUser(@RequestParam("name")String name,@RequestParam("age")int age,ModelMap modelMap){
+        user.setName(name);
+        user.setAge(age);
+        if(user.getAge()!=0&&user.getName()!=null){
+            code = userService.insertUser(user)?0:-300;
+            modelMap.addAttribute("code",code);
+            return "result";
+        }else{
+            code = -300;
+            modelMap.addAttribute("code",code);
+            return "result";
+        }
+    }
+
     @RequestMapping(value  = "/student",method = RequestMethod.GET)
     public String getUser(ModelMap modelMap){
         try{
