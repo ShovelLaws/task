@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxh.dao.ProfessionMapper" >
+  <resultMap id="BaseResultMap" type="com.lxh.po.Profession" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="profession_name" property="professionName" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="direction" property="direction" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="sill" property="sill" jdbcType="INTEGER" />
+    <result column="difficulty_level" property="difficultyLevel" jdbcType="INTEGER" />
+    <result column="growthcycle1" property="growthcycle1" jdbcType="INTEGER" />
+    <result column="growthcycle2" property="growthcycle2" jdbcType="INTEGER" />
+    <result column="prospect" property="prospect" jdbcType="INTEGER" />
+    <result column="salary1" property="salary1" jdbcType="INTEGER" />
+    <result column="salary2" property="salary2" jdbcType="INTEGER" />
+    <result column="salary3" property="salary3" jdbcType="INTEGER" />
+    <result column="inlearning" property="inlearning" jdbcType="INTEGER" />
+    <result column="create_at" property="create_at" jdbcType="TIMESTAMP" />
+    <result column="update_at" property="update_at" jdbcType="TIMESTAMP" />
+  </resultMap>
+    <select id="getAllProfession" resultType="com.lxh.po.Profession">
+        select * from profession
+    </select>
+  <insert id="insert" parameterType="com.lxh.po.Profession" >
+    insert into profession (id, profession_name, image,
+      direction, description, sill, 
+      difficulty_level, growthcycle1, growthcycle2, 
+      prospect, salary1, salary2, 
+      salary3, inlearning, create_at, 
+      update_at)
+    values (#{id,jdbcType=INTEGER}, #{professionName,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR},
+      #{direction,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{sill,jdbcType=INTEGER}, 
+      #{difficultyLevel,jdbcType=INTEGER}, #{growthcycle1,jdbcType=INTEGER}, #{growthcycle2,jdbcType=INTEGER}, 
+      #{prospect,jdbcType=INTEGER}, #{salary1,jdbcType=INTEGER}, #{salary2,jdbcType=INTEGER}, 
+      #{salary3,jdbcType=INTEGER}, #{inlearning,jdbcType=INTEGER}, #{create_at,jdbcType=TIMESTAMP},
+      #{update_at,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lxh.po.Profession" >
+    insert into profession
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="professionName != null" >
+        profession_name,
+      </if>
+      <if test="image != null" >
+        imge,
+      </if>
+      <if test="direction != null" >
+        direction,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="sill != null" >
+        sill,
+      </if>
+      <if test="difficultyLevel != null" >
+        difficulty_level,
+      </if>
+      <if test="growthcycle1 != null" >
+        growthcycle1,
+      </if>
+      <if test="growthcycle2 != null" >
+        growthcycle2,
+      </if>
+      <if test="prospect != null" >
+        prospect,
+      </if>
+      <if test="salary1 != null" >
+        salary1,
+      </if>
+      <if test="salary2 != null" >
+        salary2,
+      </if>
+      <if test="salary3 != null" >
+        salary3,
+      </if>
+      <if test="inlearning != null" >
+        inlearning,
+      </if>
+      <if test="create_at != null" >
+        create_at,
+      </if>
+      <if test="update_at != null" >
+        update_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="professionName != null" >
+        #{professionName,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{imge,jdbcType=VARCHAR},
+      </if>
+      <if test="direction != null" >
+        #{direction,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="sill != null" >
+        #{sill,jdbcType=INTEGER},
+      </if>
+      <if test="difficultyLevel != null" >
+        #{difficultyLevel,jdbcType=INTEGER},
+      </if>
+      <if test="growthcycle1 != null" >
+        #{growthcycle1,jdbcType=INTEGER},
+      </if>
+      <if test="growthcycle2 != null" >
+        #{growthcycle2,jdbcType=INTEGER},
+      </if>
+      <if test="prospect != null" >
+        #{prospect,jdbcType=INTEGER},
+      </if>
+      <if test="salary1 != null" >
+        #{salary1,jdbcType=INTEGER},
+      </if>
+      <if test="salary2 != null" >
+        #{salary2,jdbcType=INTEGER},
+      </if>
+      <if test="salary3 != null" >
+        #{salary3,jdbcType=INTEGER},
+      </if>
+      <if test="inlearning != null" >
+        #{inlearning,jdbcType=INTEGER},
+      </if>
+      <if test="create_at != null" >
+        #{create_at,jdbcType=TIMESTAMP},
+      </if>
+      <if test="update_at != null" >
+        #{update_at,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
