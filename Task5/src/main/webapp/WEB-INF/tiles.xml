@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!--tiles基础模板，定义主布局-->
+    <definition name="layout" template="/view/layout.jsp">
+        <put-attribute name="header" value="/view/header.jsp"/>
+        <put-attribute name="footer" value="/view/footer.jsp"/>
+        <put-attribute name="main"/>
+    </definition>
+    <definition name="login" extends="layout">
+        <put-attribute name="main" value="/view/login.jsp"/>
+    </definition>
+    <definition name="register" extends="layout">
+        <put-attribute name="main" value="/view/register.jsp"/>
+    </definition>
+    <definition name="result" extends="layout">
+        <put-attribute name="main" value="/view/result.jsp"/>
+    </definition>
+
+    <definition name = "home" extends="layout">
+        <put-attribute name="main" value="/view/home.jsp"/>
+    </definition>
+    <definition name = "profession" extends="layout">
+        <put-attribute name="main" value="/view/profession.jsp"/>
+    </definition>
+</tiles-definitions>
