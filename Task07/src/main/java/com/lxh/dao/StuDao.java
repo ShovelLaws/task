@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+
+@Component
 public interface StuDao {
     boolean doRegisterByPhone(Stu stu);
     boolean doRegisterByEmail(Stu stu);

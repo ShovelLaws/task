@@ -26,7 +26,7 @@ public class TaskController {
     private MailUtil mailUtil;
     @Autowired
     private OSSUtil ossUtil;
-//    @Autowired
+    @Autowired
     private RedisTemplate redisTemplate;
 
     //发送验证码
@@ -35,7 +35,7 @@ public class TaskController {
         String verifyCode = String.valueOf(new Random().nextInt(8999999)+100000);
         smsUtil.sendMessage(phone,verifyCode);
         redisTemplate.opsForValue().set("verifyCode",verifyCode,120, TimeUnit.SECONDS);
-       return "success";
+       return "result";
     }
     //获取手机注册页面
     @RequestMapping(value = "/getPhoneRegister",method = RequestMethod.GET)

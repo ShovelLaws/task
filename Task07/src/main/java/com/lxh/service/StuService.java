@@ -4,6 +4,8 @@ import com.lxh.po.Stu;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+
+@Component
 public interface StuService {
     boolean doRegisterByPhone(Stu stu);
     boolean doRegisterByEmail(Stu stu);

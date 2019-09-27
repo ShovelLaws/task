@@ -8,39 +8,15 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.Set;
 
+@Component
 public class SMSUtil {
-    private String url;
-    private String port;
-    private String accountSid;
-    private String accountToken;
-    private String appId;
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public void setPort(String port) {
-        this.port = port;
-    }
-
-    public void setAccountSid(String accountSid) {
-        this.accountSid = accountSid;
-    }
-
-    public void setAccountToken(String accountToken) {
-        this.accountToken = accountToken;
-    }
-
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-
-    public boolean sendMessage(String phone, String verifyCode){
+    public boolean sendMessage(String phone,String verifyCode){
         HashMap<String,Object> result = null;
         CCPRestSmsSDK restAPI = new CCPRestSmsSDK();
-        restAPI.init(url,port);
-        restAPI.setAccount(accountSid,accountToken);
-        restAPI.setAppId(appId);
+        restAPI.init("app.cloopen.com","8883");
+        restAPI.setAccount("8aaf07086cdb49dc016cefcd98d80a60","4ba5bfc26362466c8d016664119d46ff");
+        restAPI.setAppId("8aaf07086cdb49dc016cefcd99280a66");
         verifyCode = String.valueOf(new Random().nextInt(8999999)+100000);
 //        Jedis jedis = new Jedis("127.0.0.1",6379);
 //        jedis.setex(verifyCode,120,verifyCode);

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 
+@Component
 public class OSSUtil {
     private String url;
     private String endPoint;
