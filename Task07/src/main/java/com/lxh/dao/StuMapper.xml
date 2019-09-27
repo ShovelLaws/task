@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lxh.dao.StuDao">
+<!--    用户名登录-->
+    <select id="doLoginByUsername" resultType="com.lxh.po.Stu">
+        select * from stu where username=#{username} and password=#{password}
+    </select>
+<!--    手机号登录-->
+    <select id="doLoginByPhone" resultType="com.lxh.po.Stu">
+        select * from stu where phone=#{phone} and password=#{password}
+    </select>
+<!--    邮箱登录-->
+    <select id="doLoginByEmail" resultType="com.lxh.po.Stu">
+        select * from stu where email=#{email} and password=#{password}
+    </select>
+<!--    手机号注册-->
+    <insert id = "doRegisterByPhone" useGeneratedKeys="true" parameterType="com.lxh.po.Stu" keyProperty="id">
+        insert into stu (username,phone,password) values(#{username},#{phone},#{password})
+    </insert>
+<!--邮箱注册-->
+    <insert id = "doRegisterByEmail" useGeneratedKeys="true" parameterType="com.lxh.po.Stu" keyProperty="id">
+        insert into stu (username,email,password) values(#{username},#{email},#{password})
+    </insert>
+</mapper>

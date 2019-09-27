@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="smsUtil" class="com.lxh.util.SMSUtil">
+        <constructor-arg name="url" value="app.cloopen.com"/>
+        <constructor-arg name="port" value="8883"/>
+        <constructor-arg name="accountSid" value="8aaf07086cdb49dc016cefcd98d80a60"/>
+        <constructor-arg name="accountToken" value="4ba5bfc26362466c8d016664119d46ff"/>
+        <constructor-arg name="appId" value="8aaf07086cdb49dc016cefcd99280a66"/>
+    </bean>
+
+    <bean id="mailUtil" class="com.lxh.util.MailUtil">
+        <constructor-arg name="url" value="http://api.sendcloud.net/apiv2/mail/send"/>
+        <constructor-arg name="apiUser" value="xc1111_test_JWGuOX"/>
+        <constructor-arg name="apiKey" value="ZJF8Fkg7Qchw8qv1"/>
+        <constructor-arg name="from" value="test@hgJLLZ1cPQrO6oIDyYQMHDrmxzmRDLdj.sendcloud.org"/>
+    </bean>
+    <bean id="ossUtil" class="com.lxh.util.OSSUtil">
+        <property name="endPoint" value="oss-cn-beijing.aliyuncs.com"/>
+        <property name="bucket" value="uploadphotobylxh"/>
+        <property name="apiAcessKeyId" value="LTAI4FeHVNwqiQ84YFbkczsr"/>
+        <property name="apiAceesKeySecret" value="svRbAf0lRtYZ2ZFgf50FshI47XoZ8X"/>
+    </bean>
+</beans>
